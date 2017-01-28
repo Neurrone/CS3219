@@ -8,14 +8,18 @@ public class Ui {
     public static void main(String[] args) {
         sc = new Scanner(System.in);
 
-        System.out.println("Enter number of titles:");
-        int nTitles = sc.nextInt();
-        sc.nextLine(); // consume newline
-        System.out.println("Enter the " + nTitles + " titles:");
-        ArrayList<String> titles = readLines(nTitles);
-
-        System.out.println("Enter words to ignore seperated by spaces all in one line:");
+        System.out.print("Input words to ignore (all on one line): ");
         ArrayList<String> wordsToIgnore = new ArrayList<String>(Arrays.asList(sc.nextLine().split("\\s+")));
+
+        System.out.println("Input titles (one per line; end with empty line):");
+        ArrayList<String> titles = new ArrayList<String>();
+        while (sc.hasNextLine()) {
+            String title = sc.nextLine();
+            if (title.isEmpty()) {
+                break;
+            }
+            titles.add(title);
+        }
 
         Logic logic = new Logic(titles, wordsToIgnore);
         ArrayList<String> kwicIndex = logic.computeKwicIndex();
