@@ -1,9 +1,22 @@
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Logic {
+    private ArrayList<String> titles;
+    private ArrayList<String> wordsToIgnore;
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public Logic(ArrayList<String> titles, ArrayList<String> ignoreWords) {
+        this.titles = titles;
+        this.wordsToIgnore = ignoreWords;
+    }
 
+    public ArrayList<String> computeKwicIndex() {
+        ArrayList<String> circularShifts = new ArrayList<String>();
+        for (String title : titles) {
+            circularShifts.addAll(CircularShifter.circularShift(title, wordsToIgnore));
+        }
+        Collections.sort(circularShifts);
+        return circularShifts;
     }
 
 }
