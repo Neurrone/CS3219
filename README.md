@@ -4,25 +4,12 @@
 
 ### Logic
 
-Orchestrates the usage of other submodules. 
+Performs actual computation, uses CircularShifter.
 
-### Input
+### Ui
 
-Reads user input from the command line.
+reads user input, invokes logic to perform computation, and print result
 
-public methods:
-* readLine()
-* readInt()
-* readLines(int lines)
+### CircularShifter
 
-### Line
-Represents a line to be indexed.
-
-Public methods:
-* string[] getWords()
-
-### Circular shifter
-
-public methods:
-* constructor(wordsToIgnore)
-* computeValidCircularShifts(line)
+Contains methods for circular shifting.
