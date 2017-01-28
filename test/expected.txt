@@ -1,0 +1,8 @@
+Input words to ignore (all on one line): Input titles (one per line; end with empty line):
+KWIC-index:
+Day after Tomorrow The
+Fast and Furious
+Furious Fast and
+Man of Steel
+Steel Man of
+Tomorrow The Day after

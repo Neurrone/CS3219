@@ -23,17 +23,14 @@ public class Ui {
 
         Logic logic = new Logic(titles, wordsToIgnore);
         ArrayList<String> kwicIndex = logic.computeKwicIndex();
-        for (String s : kwicIndex) {
-            System.out.println(s);
-        }
+        printKwicIndex(kwicIndex);
         sc.close();
     }
 
-    private static ArrayList<String> readLines(int nLines) {
-        ArrayList<String> lines = new ArrayList<String>(nLines);
-        for (int i = 0; i < nLines; ++i) {
-            lines.add(sc.nextLine());
+    public static void printKwicIndex(ArrayList<String> kwicIndex) {
+        System.out.println("KWIC-index:");
+        for (String s : kwicIndex) {
+            System.out.println(s);
         }
-        return lines;
     }
 }

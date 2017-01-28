@@ -30,6 +30,7 @@ public class SharedData {
             }
             inputSentences.add(sentence);
         }
+        scanner.close();
     }
 
     private static void circularShift() {
