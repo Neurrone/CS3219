@@ -30,7 +30,11 @@ public class Ui {
     public static void printKwicIndex(ArrayList<String> kwicIndex) {
         System.out.println("KWIC-index:");
         for (String s : kwicIndex) {
-            System.out.println(s);
+            System.out.println(capitalizeString(s));
         }
+    }
+    
+    private static String capitalizeString(String s) {
+        return s.substring(0, 1).toUpperCase() + s.substring(1);
     }
 }
