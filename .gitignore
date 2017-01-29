@@ -15,3 +15,7 @@ hs_err_pid*
 # Temporary files used for testing
 test/actualAdt.txt
 test/actualSharedData.txt
+
+# IntelliJ IDEA
+.idea/
+*.iml
