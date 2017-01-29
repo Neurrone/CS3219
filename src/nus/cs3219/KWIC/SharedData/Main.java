@@ -1,6 +1,7 @@
+package nus.cs3219.KWIC.SharedData;
 import java.util.*;
 
-public class SharedData {
+public class Main {
 
     private static List<String> inputSentences = new ArrayList<>();
     private static Set<String> wordsToIgnore = new HashSet<>();
