@@ -5,7 +5,7 @@ public class Main {
 
     private static List<String> inputSentences = new ArrayList<>();
     private static Set<String> wordsToIgnore = new HashSet<>();
-    private static List<String> index = new ArrayList<>();
+    private static List<String> kwicIndex = new ArrayList<>();
 
     public static void main(String[] args) {
         readFromInput();
@@ -43,18 +43,18 @@ public class Main {
                     continue;
                 }
                 String shiftedSentence = formSentenceFromWords(words, i);
-                index.add(shiftedSentence);
+                kwicIndex.add(capitaliseFirstLetter(shiftedSentence));
             }
         }
     }
 
     private static void alphabetize() {
-        Collections.sort(index);
+        Collections.sort(kwicIndex);
     }
 
     private static void writeToOutput() {
         System.out.println("KWIC-index:");
-        for (String sentence : index) {
+        for (String sentence : kwicIndex) {
             System.out.println(sentence);
         }
     }
@@ -74,5 +74,12 @@ public class Main {
             sb.append(word).append(" ");
         }
         return sb.toString().trim();
+    }
+
+    private static String capitaliseFirstLetter(String str) {
+        if (str.length() < 2) {
+            return str.toUpperCase();
+        }
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 }
