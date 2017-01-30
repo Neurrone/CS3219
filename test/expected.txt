@@ -1,5 +1,7 @@
 Input words to ignore (all on one line): Input titles (one per line; end with empty line):
 KWIC-index:
+Abc Abc
+Abc abc
 Day after Tomorrow The
 Fast and Furious
 Furious Fast and
